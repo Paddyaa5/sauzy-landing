@@ -12,7 +12,6 @@ const Container = styled.div`
         height: 100%;
         width: 100%;
         display: grid;
-        padding: 5vw;
         grid-template-columns: 1fr 2px 1fr;
         grid-template-rows: 1fr;
         gap: 10px 10px;
@@ -32,7 +31,7 @@ const Container = styled.div`
                 margin: 30px 0px;
                 @media screen and (max-width: 1000px) {
                     width: 80%;
-                    max-width: 300px;
+                    max-width: 350px;
                 }
             }
 
@@ -52,7 +51,8 @@ const Container = styled.div`
                 justify-content: center;
             }
             div {
-                height: 90%;
+                height: 100%;
+                max-height: 600px;
                 width: 100%;
                 background-color: #29b6b2;
                 @media screen and (max-width: 1000px) {
@@ -71,37 +71,57 @@ const Container = styled.div`
                 justify-content: center;
             }
             h2 {
-                font-size: clamp(30px, 4.5vw, 60px);
+                font-size: clamp(30px, 3.2vw, 60px);
                 font-family: "Lato", sans-serif;
                 color: white;
                 line-height: 1.2em;
-                text-align: center;
+                @media screen and (max-width: 1000px) {
+                    text-align: center;
+                }
             }
             .social-media {
                 display: flex;
                 align-items: center;
+                height: 100px;
                 @media screen and (max-width: 1000px) {
                     justify-content: center;
-                    margin: 50px;
+                    margin: 30px;
                 }
                 i {
                     color: #29b6b2;
-                    font-size: clamp(30px, 2.5vw, 44px);
-                    margin-right: 20px;
+                    font-size: clamp(40px, 3.5vw, 60px);
+                    margin-right: 45px;
                 }
                 h3 {
                     color: #29b6b2;
                     font-size: clamp(26px, 2.5vw, 40px);
                     font-family: "Lato", sans-serif;
                     font-weight: 900;
-                    font-style: italic;
+                    font-family: "Condiment", cursive;
+                    cursor: pointer;
+                    text-decoration: none;
+                }
+                h3 span {
+                    font-size: clamp(44px, 3.5vw, 56px);
+                }
+                .hashtag-link,
+                i {
+                    text-decoration: none;
+                    transition: 0.5s filter;
+                    filter: brightness(90%);
+                    &:hover {
+                        text-decoration-color: rgba(38, 182, 179, 0.5);
+                        transition: 0.5s text-decoration-color;
+                        filter: brightness(110%);
+                    }
                 }
             }
             form {
-                height: 50px;
-                border: 1px solid #29b6b2;
+                height: 65px;
                 width: 100%;
                 background-color: white;
+                border-radius: 3px;
+                overflow: hidden;
                 @media screen and (max-width: 1000px) {
                     max-width: 500px;
                     align-self: center;
@@ -111,10 +131,12 @@ const Container = styled.div`
                     width: 70%;
                     outline: none;
                     border: none;
+                    border: 3px solid #29b6b2;
                     padding: 0px 10px;
                     font-family: "Lato", sans-serif;
                     color: #10022c;
                     transition: 0.5s background-color;
+                    font-size: clamp(14px, 1.2vw, 22px);
                     @media screen and (max-width: 1000px) {
                         width: 60%;
                     }
@@ -125,7 +147,9 @@ const Container = styled.div`
                 }
                 button {
                     height: 100%;
+                    border: 3px solid #29b6b2;
                     width: 30%;
+                    font-size: clamp(14px, 1.2vw, 22px);
                     background-color: #29b6b2;
                     outline: none;
                     border: none;
@@ -166,7 +190,14 @@ export default function LandingPage() {
                         <a href="https://www.instagram.com/sauzyuk/?hl=en">
                             <i className="fab fa-instagram"></i>
                         </a>
-                        <h3>#letsgetsauzy</h3>
+                        <a
+                            href="https://www.instagram.com/explore/tags/letsgetsauzy/"
+                            className="hashtag-link"
+                        >
+                            <h3>
+                                <span>#</span>letsgetsauzy
+                            </h3>
+                        </a>
                     </div>
                     <form
                         action="https://send.pageclip.co/HhipMveu6YSYpcc6pEjMfkZ0WzDrzUUu"
