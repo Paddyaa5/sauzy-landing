@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import styled from "styled-components";
+//images
+import Sauzy from "./images/SauzyLogo.png";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const Container = styled.div`
+    height: 100vh;
+    width: 100vw;
+    background: #10022c;
+    img {
+        width: 300px;
+        object-fit: contain;
+    }
+    h1 {
+        color: #29b6b2;
+    }
+`;
+
+export default function LandingPage() {
+    return (
+        <Container>
+            <h1>Sauzy</h1>
+            <img src={Sauzy} alt="Sauzy Uk Logo" />
+        </Container>
+    );
 }
-
-export default App;
