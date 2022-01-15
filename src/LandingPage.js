@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
+import gsap from "gsap";
 //images
 import Sauzy from "./images/SauzyLogo.png";
 
@@ -17,7 +18,7 @@ const Container = styled.div`
         gap: 10px 10px;
         @media screen and (max-width: 1000px) {
             grid-template-columns: 1fr;
-            grid-template-rows: 1fr 2px 1fr;
+            grid-template-rows: 0.9fr 2px 1.1fr;
         }
         .first-section {
             display: flex;
@@ -32,6 +33,7 @@ const Container = styled.div`
                 @media screen and (max-width: 1000px) {
                     width: 80%;
                     max-width: 350px;
+                    margin: 20px 0px;
                 }
             }
 
@@ -56,8 +58,7 @@ const Container = styled.div`
                 width: 100%;
                 background-color: #29b6b2;
                 @media screen and (max-width: 1000px) {
-                    height: 100%;
-                    width: 90%;
+                    opacity: 0;
                 }
             }
         }
@@ -90,7 +91,7 @@ const Container = styled.div`
                 i {
                     color: #29b6b2;
                     font-size: clamp(40px, 3.5vw, 60px);
-                    margin-right: 45px;
+                    margin-right: 25px;
                 }
                 h3 {
                     color: #29b6b2;
@@ -174,15 +175,40 @@ const Container = styled.div`
 `;
 
 export default function LandingPage() {
+    let tl = gsap.timeline();
+
+    useEffect(() => {
+        tl.from("#divider-line", {
+            duration: 0.85,
+            opacity: 0,
+            width: "0%",
+            height: "0%",
+            ease: "circ.Out",
+        })
+            .from("#logo, #main-text", {
+                opacity: 0,
+                skewY: 10,
+                y: 100,
+                duration: 0.85,
+                delay: 0.15,
+                stagger: 0.5,
+            })
+            .from(".second-section", {
+                duration: 0.85,
+                opacity: 0,
+                x: 50,
+                delay: "-0.5",
+            });
+    });
     return (
         <Container>
             <div className="inner-container">
                 <section className="first-section">
-                    <img src={Sauzy} alt="Sauzy Uk Logo" />
-                    <h1>Launching Soon</h1>
+                    <img id="logo" src={Sauzy} alt="Sauzy Uk Logo" />
+                    <h1 id="main-text">Launching Soon</h1>
                 </section>
                 <section className="divider">
-                    <div></div>
+                    <div id="divider-line"></div>
                 </section>
                 <section className="second-section">
                     <h2>Sign up to our launch notification to receive a pre-launch gift.</h2>
