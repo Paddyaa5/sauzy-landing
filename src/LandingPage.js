@@ -9,6 +9,10 @@ const Container = styled.div`
     width: 100vw;
     background: #10022c;
     padding: 5vw;
+    overflow: hidden;
+    @media screen and (max-width: 1000px) {
+        padding: 10vw 5vw;
+    }
     .inner-container {
         height: 100%;
         width: 100%;
@@ -18,7 +22,7 @@ const Container = styled.div`
         gap: 10px 10px;
         @media screen and (max-width: 1000px) {
             grid-template-columns: 1fr;
-            grid-template-rows: 0.9fr 2px 1.1fr;
+            grid-template-rows: 1fr 20px 1fr;
         }
         .first-section {
             display: flex;
@@ -42,7 +46,7 @@ const Container = styled.div`
                 text-transform: uppercase;
                 font-weight: 600;
                 letter-spacing: 4px;
-                font-size: clamp(20px, 1.5vw, 30px);
+                font-size: clamp(16px, 2.8vw, 28px);
                 font-family: "Lato", sans-serif;
             }
         }
@@ -65,17 +69,16 @@ const Container = styled.div`
         .second-section {
             display: flex;
             flex-direction: column;
-            justify-content: space-evenly;
+            justify-content: center;
             padding: 5%;
             @media screen and (max-width: 1000px) {
-                padding: 0% 10%;
                 justify-content: center;
             }
             h2 {
-                font-size: clamp(30px, 3.2vw, 60px);
+                font-size: clamp(20px, 6vw, 40px);
                 font-family: "Lato", sans-serif;
                 color: white;
-                line-height: 1.2em;
+                line-height: 1.4em;
                 @media screen and (max-width: 1000px) {
                     text-align: center;
                 }
@@ -84,30 +87,36 @@ const Container = styled.div`
                 display: flex;
                 align-items: center;
                 height: 100px;
+                margin: 5vh 0px;
                 @media screen and (max-width: 1000px) {
                     justify-content: center;
-                    margin: 30px;
+                    margin: 2.5vh 0px;
                 }
                 i {
-                    color: #29b6b2;
-                    font-size: clamp(40px, 3.5vw, 60px);
-                    margin-right: 25px;
+                    background: -webkit-linear-gradient(#9be9e6, #29b6b2);
+                    background-clip: text;
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    font-size: clamp(28px, 4vw, 50px);
+                    margin: 0px 10px;
                 }
                 h3 {
-                    color: #29b6b2;
-                    font-size: clamp(26px, 2.5vw, 40px);
+                    font-size: clamp(18px, 4vw, 40px);
                     font-family: "Lato", sans-serif;
-                    font-weight: 900;
                     font-family: "Condiment", cursive;
                     cursor: pointer;
                     text-decoration: none;
                 }
                 h3 span {
-                    font-size: clamp(44px, 3.5vw, 56px);
+                    font-size: clamp(34px, 3.5vw, 50px);
                 }
                 .hashtag-link,
                 i {
                     text-decoration: none;
+                    background: -webkit-linear-gradient(#9be9e6, #29b6b2);
+                    background-clip: text;
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
                     transition: 0.5s filter;
                     filter: brightness(90%);
                     &:hover {
@@ -137,7 +146,8 @@ const Container = styled.div`
                     font-family: "Lato", sans-serif;
                     color: #10022c;
                     transition: 0.5s background-color;
-                    font-size: clamp(14px, 1.2vw, 22px);
+                    font-size: clamp(12px, 2.5vw, 20px);
+                    filter: brightness(90%);
                     @media screen and (max-width: 1000px) {
                         width: 60%;
                     }
@@ -150,7 +160,7 @@ const Container = styled.div`
                     height: 100%;
                     border: 3px solid #29b6b2;
                     width: 30%;
-                    font-size: clamp(14px, 1.2vw, 22px);
+                    font-size: clamp(12px, 2.5vw, 20px);
                     background-color: #29b6b2;
                     outline: none;
                     border: none;
@@ -163,6 +173,7 @@ const Container = styled.div`
                     filter: brightness(90%);
                     @media screen and (max-width: 1000px) {
                         width: 40%;
+                        letter-spacing: 1px;
                     }
                 }
                 button:hover {
@@ -215,6 +226,12 @@ export default function LandingPage() {
                     <div className="social-media">
                         <a href="https://www.instagram.com/sauzyuk/?hl=en">
                             <i className="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.tiktok.com/@sauzyuk">
+                            <i className="fab fa-tiktok"></i>
+                        </a>
+                        <a href="https://www.facebook.com/sauzyuk">
+                            <i className="fab fa-facebook-f"></i>
                         </a>
                         <a
                             href="https://www.instagram.com/explore/tags/letsgetsauzy/"
