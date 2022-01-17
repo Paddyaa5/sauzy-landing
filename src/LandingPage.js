@@ -74,6 +74,12 @@ const Container = styled.div`
             @media screen and (max-width: 1000px) {
                 justify-content: center;
             }
+            a {
+                text-decoration: none;
+            }
+            .hashtag-link {
+                margin-left: 30px;
+            }
             h2 {
                 font-size: clamp(20px, 6vw, 40px);
                 font-family: "Lato", sans-serif;
@@ -97,20 +103,19 @@ const Container = styled.div`
                     background-clip: text;
                     -webkit-background-clip: text;
                     -webkit-text-fill-color: transparent;
-                    font-size: clamp(28px, 4vw, 50px);
+                    font-size: clamp(28px, 4vw, 46px);
                     margin: 0px 10px;
                 }
                 h3 {
                     font-size: clamp(18px, 4vw, 40px);
-                    font-family: "Lato", sans-serif;
                     font-family: "Condiment", cursive;
                     cursor: pointer;
                     text-decoration: none;
+                    color: #29b6b2;
                 }
                 h3 span {
-                    font-size: clamp(34px, 3.5vw, 50px);
+                    font-size: clamp(34px, 3.5vw, 46px);
                 }
-                .hashtag-link,
                 i {
                     text-decoration: none;
                     background: -webkit-linear-gradient(#9be9e6, #29b6b2);
