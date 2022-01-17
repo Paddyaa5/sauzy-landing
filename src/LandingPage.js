@@ -140,6 +140,7 @@ const Container = styled.div`
                 @media screen and (max-width: 1000px) {
                     max-width: 500px;
                     align-self: center;
+                    border-radius: 0px;
                 }
                 input {
                     height: 100%;
