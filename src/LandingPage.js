@@ -252,7 +252,7 @@ export default function LandingPage() {
                         action="https://send.pageclip.co/HhipMveu6YSYpcc6pEjMfkZ0WzDrzUUu/Signup"
                         method="POST"
                     >
-                        <input type="text" placeholder="Email address" />
+                        <input type="text" name="email" placeholder="Email address" />
                         <button type="submit">Notify Me</button>
                     </form>
                 </section>
