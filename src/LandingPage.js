@@ -249,7 +249,7 @@ export default function LandingPage() {
                         </a>
                     </div>
                     <form
-                        action="https://send.pageclip.co/HhipMveu6YSYpcc6pEjMfkZ0WzDrzUUu"
+                        action="https://send.pageclip.co/HhipMveu6YSYpcc6pEjMfkZ0WzDrzUUu/Signup"
                         method="POST"
                     >
                         <input type="text" placeholder="Email address" />
